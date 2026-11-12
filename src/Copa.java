@@ -101,4 +101,8 @@ public void registrarEquipo(Equipo equipo) {
         Collections.sort(calendario);
         return calendario.iterator();
     }
+
+    public List<Programable> obtenerEventos() {
+        return new ArrayList<>(eventos);
+    }
 }
