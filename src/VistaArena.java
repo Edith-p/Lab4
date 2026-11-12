@@ -77,4 +77,22 @@ public class VistaArena {
         } 
         return fecha;
     }
+
+    public int leerHora() {
+        int hora = -1;
+        boolean valida = false;
+
+        while (!valida) {
+            System.out.print("Ingrese la hora (0 a 23): ");
+            hora = leerEntero();
+
+            if (hora >= 0 && hora <= 23) {
+                valida = true;
+            } else {
+                mostrarMensaje("La hora debe estar entre 0 y 23 -_-");
+            }
+        }
+
+        return hora;
+    }
 }
