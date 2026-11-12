@@ -19,7 +19,7 @@ En fútbol sala se permiten empates y se asignan 3 puntos por victoria, 1 por em
 
 El calendario muestra los eventos con fecha asignada, ordenados por fecha, hora y sede. Se validan conflictos de sede y de equipos, horas fuera del rango de 0 a 23, marcadores negativos y resultados sobre encuentros sin programar o finalizados. Las entradas incorrectas se manejan sin terminar el programa. Para la interacción con el usuario se utiliza Scanner.
 
-##Clases implementadas
+## Clases implementadas
 Encuentro es la clase abstracta de la que heredan FutbolSala y Baloncesto. Equipo conserva los datos y puntos de cada participante; Exhibicion representa las clínicas o demostraciones y Copa administra los equipos y eventos.
 
 Siguiendo el patrón MVC, también se utilizan VistaArena, ControladorArena y Principal. Las interfaces Programable y Puntuable separan la programación de eventos del registro de resultados. Comparable permite ordenar equipos y eventos, e Iterable permite recorrer el calendario. El enum EstadoEvento define SIN_PROGRAMAR, PROGRAMADO y FINALIZADO.
