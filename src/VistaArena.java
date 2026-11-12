@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class VistaArena {
@@ -24,7 +26,20 @@ public class VistaArena {
     }
 
     public String leerTexto() {
-        return sc.nextLine().trim();
+        String texto = "";
+        boolean valido = false;
+
+        while (!valido) {
+            texto = sc.nextLine().trim();
+
+            if (texto.isEmpty()) {
+                mostrarMensaje("Este dato no puede estar vacío -_- ingrésalo nuvamente: ");
+    
+            } else {
+                valido = true;
+            }
+        }
+        return texto;
     }
 
     public int leerEntero () {
@@ -44,5 +59,22 @@ public class VistaArena {
     
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
+    }
+
+    public LocalDate leerFecha() {
+        LocalDate fecha = null;
+        boolean valida = false;
+
+        while (!valida) {
+            mostrarMensaje("Ingrese la fecha (AAAA-MM-DD): ");
+            
+            try {
+                fecha = LocalDate.parse(sc.nextLine().trim());
+                valida = true;
+            } catch (DateTimeParseException e) {
+                mostrarMensaje("Fecha inválida -_- ingresala nuevamente con el formato AAAA-MM-DD y que sea una fecha existente");
+            }
+        } 
+        return fecha;
     }
 }
