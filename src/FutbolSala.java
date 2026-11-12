@@ -27,6 +27,6 @@ public class FutbolSala extends Encuentro{
     public String getDescripcion(){
         Equipo equipoA = getEquipoA(); 
         Equipo equipoB = getEquipoB(); 
-        return "Futbol sala: " + equipoA.getNombre() + "VS" + equipoB.getNombre(); 
+        return "Futbol sala: " + equipoA.getNombre() + "---VS---" + equipoB.getNombre(); 
     }
 }
